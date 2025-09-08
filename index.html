@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive JavaScript Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section with Dynamic Welcome -->
+    <header class="header">
+        <div class="container">
+            <h1 id="dynamic-title">Interactive JavaScript Playground</h1>
+            <p id="welcome-message">Welcome! Explore the interactive features below.</p>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Interactive Counter Section -->
+            <section class="section">
+                <div class="card">
+                    <h2>Interactive Counter</h2>
+                    <div class="counter-container">
+                        <button id="decrease-btn" class="btn btn-secondary">-</button>
+                        <span id="counter-display" class="counter-display">0</span>
+                        <button id="increase-btn" class="btn btn-primary">+</button>
+                    </div>
+                    <button id="reset-btn" class="btn btn-outline">Reset</button>
+                    <div id="counter-message" class="message"></div>
+                </div>
+            </section>
+
+            <!-- Collapsible FAQ Section -->
+            <section class="section">
+                <div class="card">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question" data-target="faq1">
+                                What is JavaScript? <span class="faq-icon">+</span>
+                            </button>
+                            <div id="faq1" class="faq-answer">
+                                <p>JavaScript is a programming language that enables interactive web pages and is an essential part of web applications.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" data-target="faq2">
+                                How do event listeners work? <span class="faq-icon">+</span>
+                            </button>
+                            <div id="faq2" class="faq-answer">
+                                <p>Event listeners are functions that wait for specific events (like clicks or key presses) to occur and then execute code in response.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" data-target="faq3">
+                                What is DOM manipulation? <span class="faq-icon">+</span>
+                            </button>
+                            <div id="faq3" class="faq-answer">
+                                <p>DOM manipulation refers to changing the structure, style, or content of web pages dynamically using JavaScript.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form Validation Section -->
+            <section class="section">
+                <div class="card">
+                    <h2>User Registration Form</h2>
+                    <form id="registration-form" class="form" novalidate>
+                        <div class="form-group">
+                            <label for="username">Username *</label>
+                            <input type="text" id="username" name="username" required>
+                            <div class="error-message" id="username-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required>
+                            <div class="error-message" id="password-error"></div>
+                            <div class="password-strength" id="password-strength"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password *</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required>
+                            <div class="error-message" id="confirm-password-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" min="13" max="120">
+                            <div class="error-message" id="age-error"></div>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the Terms and Conditions *
+                            </label>
+                            <div class="error-message" id="terms-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Contact Method</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="contact" value="email" checked>
+                                    <span class="radio-mark"></span>
+                                    Email
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="contact" value="phone">
+                                    <span class="radio-mark"></span>
+                                    Phone
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">Register Account</button>
+                    </form>
+
+                    <div id="form-success" class="success-message" style="display: none;">
+                        <h3>Registration Successful!</h3>
+                        <p>Welcome to our platform! Your account has been created successfully.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dynamic Content Display -->
+            <section class="section">
+                <div class="card">
+                    <h2>User Preferences Dashboard</h2>
+                    <div id="user-dashboard" class="dashboard">
+                        <p class="dashboard-placeholder">Complete the registration form to see your preferences here!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Interactive JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
